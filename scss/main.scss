@@ -112,17 +112,17 @@ a {
     margin: 1em;
 }
 .newsletter {
-    padding: 2em;
+    padding: 2.4em;
     color: white;
     background: #35424a;
     overflow: hidden;
 }
-.newsletter h1 {
-    padding-top: 0.7em;
+.newsletter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
 }
-.newsletter form {
-    margin: 10px;
-}
+
 .newsletter input[type="email"]{ 
     padding: 20px 30px;
     height:2.8em;
@@ -132,6 +132,10 @@ a {
 .footer {
     align-content: center;
     margin-bottom: 4em;
+    flex: 1;
+}
+.footer-grid {
+    display: flex;
 }
 .main-footer {
     padding: 4em 0em 0.9em 0em;
@@ -141,10 +145,12 @@ a {
     clear: left;
     text-align: center;
 }
+.rooms{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 .rooms-pic-1{    
-    max-width: 30%;    
-    display: inline-block;    
-    position: relative;    
+   position: relative;    
     overflow: hidden;    
     padding: 0 1em;  
 }
