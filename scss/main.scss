@@ -215,18 +215,20 @@ a {
     grid-template-columns: repeat(3, 1fr);
 }
 .rooms-pic-1{    
-   position: relative;    
+    position: relative;    
     overflow: hidden;    
-    padding: 0 1em;  
+    padding: 1em 1em;  
+    width: 400px;
 }
-// .rooms-pic-1 figure {
-
-// }
+.rooms-pic-1 figure {
+    width: 100%;
+}
 .rooms-body {
     background: white !important;
-    padding: 30px;
+    padding: 20px;
     border: 1px solid #e6e6e6;
     border-top: none;
+    width: 100%;
 }
 figure .img {
     max-width: 100%;
@@ -310,8 +312,13 @@ figure .img {
         text-align: center;
         margin: 0.8em 0 0.8em 0;
     }
+    .rooms {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
     .rooms-pic-1 {
-        max-width: 100%;
+        width: 300px;
     }
     .sideleft {
         padding-bottom: 1em;
