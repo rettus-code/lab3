@@ -35,10 +35,15 @@ header {
     gap: 4rem;
 }
 .logo {
+    padding: 1em;
     text-transform: uppercase;
     letter-spacing: .2em;
     font-weight: 700;
     color: white;
+}
+header .logo {
+    float: left;
+    padding: 1em 0.5em 0.5em 0.5em;
 }
 nav {
     background: transparent !important;
@@ -79,6 +84,38 @@ a {
     background-size: cover;
     height: 100vh;
 }
+.heroitems {
+    color: $white-color;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    z-index: 2;
+}
+.heroitems h1 {
+    font-size: 3em;
+}
+.heroitems p {
+    font-size: 1.4em;
+    padding-bottom: 2rem;
+}
+.heroimage:before {     
+    content: "";        
+    background: rgba(0, 0, 0, 0.5);    
+    width: 100%;     
+    height: 100vh;     
+    z-index: 1;     
+    position: absolute;    
+    top: 0;     
+    left: 0;     
+    right: 0;     
+    bottom: 0; 
+} 
 .main-padding {
     padding: 7em 0em;
 }
@@ -100,7 +137,7 @@ a {
     background-color: #697e83;    
     transition: .3s all ease;    
     padding: 12px 30px;    
-    margin-top: 1em;    
+    margin-top: 0 !important;    
     text-transform: uppercase;    
     letter-spacing: .15em;    
     color: #fff;    
@@ -112,9 +149,18 @@ a {
    color: #697e83;
    background-color: #ffffff; 
 }
-// .sideright {
+#toggle {
+    display: none;
+}
+.label {
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+    width: 30px;
+    float: right;
+    color: $white-color;
+}
 
-// }
 .bg-color {
     background-color: #f8f9fa !important;
 }
@@ -206,12 +252,11 @@ figure .img {
 .container-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
     justify-items: center;
     gap: 20px;
     margin: 0.2em 2em 0.2em 2em;
 }
-
 .item img {
     width: 100%;
     height: 100%;
@@ -221,4 +266,87 @@ figure .img {
     filter: brightness(60%);
     box-shadow: 0 8px 16px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
     cursor: pointer;
+}
+@media(max-width: 992px) {
+    .label {
+        display: block;
+        cursor: pointer;
+    }
+    nav ul {
+        text-align: center;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        margin: 0 auto;
+        top: 5.6em;
+        width: 80%;
+        left: 10%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        max-height: 0;
+        overflow: hidden;
+    }
+    nav a {
+        opacity: 1;
+    }
+    toggle:checked+.menu {
+        max-height: 300px;
+    }
+    header .logo {
+        float: left;
+        padding: 1em 0.5em 0.5em 0.5em;
+    }
+    .menu a {
+        display: block;
+        margin: 0;
+    }
+    .heroitems{
+        height: 100vh;
+    }
+    .heroitems h1 {
+        font-size: 40px;
+    }
+    sideleft, .sideright,.newsletter h1,.newsletter form, .footer, .feature-image img, .newsletter input[type="email"], button, .contactform, .button, textarea, .rooms-pic-1 {
+        width: 100%;
+        text-align: center;
+        margin: 0.8em 0 0.8em 0;
+    }
+    .rooms-pic-1 {
+        max-width: 100%;
+    }
+    .sideleft {
+        padding-bottom: 1em;
+    }
+    .sideleft img {
+        width: 80%;
+    }
+    .main-padding {
+        padding: 2em 0;
+    }
+    .heroitems p {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .footer {
+        margin-bottom: 1em;
+    }
+    button {
+        margin-top: 1em !important;
+    }
+}
+@media(max-width: 600px) {
+    .rooms, .newsletter-grid, .footer-grid, .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        display: block;
+    }
+}
+@media(max-width: 480px){ 
+    .heroitems h1 {
+        font-size: 30px;
+    }
+    .heroitems p {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
 }
